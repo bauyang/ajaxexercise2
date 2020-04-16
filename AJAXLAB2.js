@@ -1,12 +1,17 @@
 function testNum(num){
     return new Promise(function(resolve,reject){
         if( num> 50){
-            console.log(num + " is greater than 50")
+            resolve(num + " is greater than 50")
         }
         else {
-            console.log( num + " is less than or equal to 50")
+            reject( num + " is less than or equal to 50")
+        
         };
     });
 };
 
-testNum(50);
+testNum(55).then(function(result){
+    console.log(result)
+}).catch(function(error){
+    console.log(error)
+});
